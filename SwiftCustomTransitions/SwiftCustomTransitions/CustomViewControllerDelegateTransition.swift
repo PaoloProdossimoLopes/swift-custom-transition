@@ -17,11 +17,12 @@ final class InteractiveModalPresentationController: UIPresentationController, UI
     private let presentedYOffset: CGFloat = 150
     private var direction: CGFloat = 0
     private var state: ModalScaleState = .interaction
+    
     private lazy var dimmingView: UIView! = {
         guard let container = containerView else { return nil }
         
         let view = UIView(frame: container.bounds)
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.75)
+        view.backgroundColor = UIColor.black.withAlphaComponent(0.45)
         view.addGestureRecognizer(
             UITapGestureRecognizer(target: self, action: #selector(didTap(tap:)))
         )
